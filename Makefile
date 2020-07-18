@@ -1,6 +1,6 @@
 clean:
-	terraform destroy -auto-approve -var-file list/list1.tfvars list
-	terraform destroy -auto-approve -var-file map/map1.tfvars map
+	terraform destroy -auto-approve -state=list.tfstate -var-file list/list1.tfvars list
+	terraform destroy -auto-approve -state=map.tfstate -var-file map/map1.tfvars map
 
 init:
 	terraform $@ list

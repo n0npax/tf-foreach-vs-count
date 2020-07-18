@@ -11,7 +11,7 @@ Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
 Apply complete! Resources: 0 added, 0 changed, 1 destroyed.
 ```
 
-Using list recreation was required to fix resource ordering in tf state
+When using list, recreation was required to fix resource ordering in tf state
 ```bash
 Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
 Apply complete! Resources: 2 added, 0 changed, 3 destroyed.
@@ -33,4 +33,15 @@ Apply complete! Resources: 2 added, 0 changed, 3 destroyed.
           "index_key": "foo",
           "schema_version": 0,
           "attributes": {
+```
+
+## Test it yourself
+```
+# ensure you have direct access to kubernetes cluster
+# you can use minikube for test purposes
+make init
+make list
+make map
+# compare states
+make clean
 ```
